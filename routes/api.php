@@ -11,6 +11,11 @@ Route::get('/status', function() {
 })->middleware('auth:sanctum');
 
 Route::apiResource('/clients', ClientController::class)->middleware('auth:sanctum');
+//Route::get('/clients', [ClientController::class, 'index'])->middleware(['auth:sanctum','abilities:clients:list']);
+//Route::post('/clients', [ClientController::class, 'store']);
+//Route::get('/clients/{id}', [ClientController::class, 'show'])->middleware(['auth:sanctum','abilities:clients:list']);
+//Route::put('/clients/{id}', [ClientController::class, 'update']);
+//Route::delete('/clients/{id}', [ClientController::class, 'delete']);
 
 // auth routes
 Route::post('/login', [AuthController::class, 'login']);
