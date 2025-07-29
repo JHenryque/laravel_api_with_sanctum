@@ -29,7 +29,12 @@ class AuthController extends Controller
 
         // authenticate user
         $user = auth()->user();
+
+        // assume o tempo de expiraçao que está comfigurado no Sanctum
         $token = $user->createToken($user->name)->plainTextToken;
+
+        // difinir o tempo de expiração para token
+        $token = $user->createToken($user->name, ['*'], now()->addHour())->plainTextToken;
 
         // return the access token for the api requests
         return ApiResponse::success(
