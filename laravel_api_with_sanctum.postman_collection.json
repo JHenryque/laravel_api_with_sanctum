@@ -1,0 +1,400 @@
+{
+	"info": {
+		"_postman_id": "ff4c4113-1f7d-45c0-af3a-b469df28d992",
+		"name": "laravel_api_with_sanctum",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "47105331",
+		"_collection_link": "https://jhenryque-1338898.postman.co/workspace/Jos%25C3%25A9-Henryque's-Workspace~05b8c6b3-ff46-43c9-8613-a64251ebfcdb/collection/47105331-ff4c4113-1f7d-45c0-af3a-b469df28d992?action=share&source=collection_link&creator=47105331"
+	},
+	"item": [
+		{
+			"name": "(00) Login User",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "5|34xxgJWoVdkEihKBDWTKkMtAmhrgoFvtEbFzihaW3dbd818b",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"appconsumer001@gmail.com\",\r\n    \"password\": \"Aa123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://laravel_api_with_sanctum.test/api/login",
+					"protocol": "http",
+					"host": [
+						"laravel_api_with_sanctum",
+						"test"
+					],
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "(00) Logout User",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://laravel_api_with_sanctum.test/api/logout",
+					"protocol": "http",
+					"host": [
+						"laravel_api_with_sanctum",
+						"test"
+					],
+					"path": [
+						"api",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "(01) Status",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://laravel_api_with_sanctum.test/api/status",
+					"protocol": "http",
+					"host": [
+						"laravel_api_with_sanctum",
+						"test"
+					],
+					"path": [
+						"api",
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "(02) Cliente",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://laravel_api_with_sanctum.test/api/clients",
+					"protocol": "http",
+					"host": [
+						"laravel_api_with_sanctum",
+						"test"
+					],
+					"path": [
+						"api",
+						"clients"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "(03) Create cliente",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "in",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"José\",\r\n    \"email\": \"Jose@gmail.com\",\r\n    \"phone\": \"87991100000\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://laravel_api_with_sanctum.test/api/clients",
+					"protocol": "http",
+					"host": [
+						"laravel_api_with_sanctum",
+						"test"
+					],
+					"path": [
+						"api",
+						"clients"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "(04) Show cliente",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Jose\",\r\n    \"email\": \"jose@gmail.com\",\r\n    \"phone\": \"8799110022\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://laravel_api_with_sanctum.test/api/clients/102",
+					"protocol": "http",
+					"host": [
+						"laravel_api_with_sanctum",
+						"test"
+					],
+					"path": [
+						"api",
+						"clients",
+						"102"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "(05) Update cliente",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Jose\",\r\n    \"email\": \"jose012@gmail.com\",\r\n    \"phone\": \"87991125251\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://laravel_api_with_sanctum.test/api/clients/102",
+					"protocol": "http",
+					"host": [
+						"laravel_api_with_sanctum",
+						"test"
+					],
+					"path": [
+						"api",
+						"clients",
+						"102"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "(06) Delete cliente",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Jose\",\r\n    \"email\": \"jose@gmail.com\",\r\n    \"phone\": \"8799110022\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://laravel_api_with_sanctum.test/api/clients/102",
+					"protocol": "http",
+					"host": [
+						"laravel_api_with_sanctum",
+						"test"
+					],
+					"path": [
+						"api",
+						"clients",
+						"102"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "token",
+			"value": "8|Y6jFUduefZ8BYfR9idETnpkTY8WlFyWNTDXk8Ddmdb61f709",
+			"type": "default"
+		}
+	]
+}
