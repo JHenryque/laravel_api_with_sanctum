@@ -15,3 +15,4 @@ Route::apiResource('/clients', ClientController::class)->middleware('auth:sanctu
 // auth routes
 Route::post('/login', [AuthController::class, 'login']);
 Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth:sanctum');
+// Vamos Usar Variáveis de Ambiente no Postman foi guardado o token na variavel laravel_api_with_sanctum_environment
