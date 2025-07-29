@@ -4,12 +4,10 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ClientController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Services\ApiResponse;
 
 Route::get('/status', function() {
-   return response()->json([
-       'status' => 'Ok',
-       'message' => 'API is running',
-   ],200);
+    return ApiResponse::success('API is running');
 });
 
 Route::apiResource('/clients', ClientController::class);
