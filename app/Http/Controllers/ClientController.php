@@ -13,6 +13,12 @@ class ClientController extends Controller
      */
     public function index()
     {
+        // check if the token allows this result
+        if(!auth()->user()->tokeCan('clients:list'))
+        {
+            return ApiResponse::error('Access denied', 401);
+        }
+
         // return al client of the database Client::all() ou
         return ApiResponse::success(Client::paginate(10),200);
     }
@@ -43,6 +49,12 @@ class ClientController extends Controller
      */
     public function show(string $id)
     {
+        // check if the token allows this result
+        if(!auth()->user()->tokeCan('clients:detail'))
+        {
+            return ApiResponse::error('Access denied', 401);
+        }
+
         // show client details
         $client = Client::find($id);
 
