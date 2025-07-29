@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Client;
 use Illuminate\Http\Request;
 
 class ClientController extends Controller
@@ -11,7 +12,8 @@ class ClientController extends Controller
      */
     public function index()
     {
-        //
+        // return al client of the database
+        return response()->json(Client::paginate(10),200);
     }
 
     /**

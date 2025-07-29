@@ -11,4 +11,4 @@ Route::get('/status', function() {
    ],200);
 });
 
-Route::apiResource('clients', ClientController::class);
+Route::apiResource('/clients', ClientController::class);
